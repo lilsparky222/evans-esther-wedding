@@ -194,10 +194,13 @@ button{font:inherit;color:inherit}
 .steps small a:hover{color:var(--accent);text-decoration-color:var(--accent)}
 .steps small span{display:block}
 @media (min-width:820px){.steps{columns:2;column-gap:var(--s6)}}
-.sub{max-width:900px;margin:var(--s6) auto 0;display:grid;gap:var(--s3)}
-.sub h3{font-size:clamp(1.625rem,4.5vw,2rem);font-style:italic;line-height:1.15}
-.sub .steps{margin-top:var(--s2)}
-.sub .steps li{font-size:1.1875rem;padding:12px 0}
+#photography .steps li{font-size:1.1875rem;padding:12px 0}
+/* master of ceremonies */
+.mc{max-width:900px;margin:var(--s6) auto 0;display:grid;gap:var(--s3);justify-items:center;text-align:center;position:relative;padding-top:var(--s5)}
+.mc::before{content:"";width:1px;height:var(--s5);background:var(--accent);position:absolute;top:0;left:50%;opacity:.8}
+.mc-name{font-size:clamp(2.25rem,6.5vw,3.25rem);font-style:italic;font-weight:300;line-height:1.1;letter-spacing:-.01em;display:flex;align-items:center;gap:var(--s4);width:100%;justify-content:center}
+.mc-name::before,.mc-name::after{content:"";flex:1;max-width:160px;height:1px;background:var(--line)}
+@media (max-width:519px){.mc-name::before,.mc-name::after{display:none}}
 
 /* ---------- Venue ---------- */
 .venue-grid{display:grid;gap:var(--s5);align-items:center;justify-items:center}
@@ -374,10 +377,31 @@ footer p:last-child{max-width:24em;line-height:2.1}
       <li>Celebration and refreshments</li>
     </ol>
 
-    <div class="sub" id="photography">
+    <div class="mc">
+      <p class="label">Master of ceremonies</p>
+      <p class="mc-name">Philip Offei Asamoah</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= QUOTE =================  photo: photos/quote.jpg -->
+<section class="photo-sec quote" data-photo-section aria-label="A note from the couple">
+  <img data-photo src="photos/quote.jpg" alt="Evans and Esther standing back to back, smiling over their shoulders" loading="lazy">
+  <div class="quote-card glass">
+    <p>Together is a beautiful place to be</p>
+    <p class="label">Evans &amp; Esther</p>
+  </div>
+</section>
+
+<!-- ================= ORDER OF PHOTOGRAPHY ================= -->
+<section class="sec" id="photography">
+  <div class="wrap">
+    <div class="head">
       <p class="label">Photography</p>
-      <h3>Order of photography</h3>
-      <ol class="steps">
+      <h2 class="title">Order of photography</h2>
+    </div>
+    <ol class="steps">
         <li>Couple + Pastors, Elders, Deacons and Deaconesses</li>
         <li>Couple + bride and groom’s parents only</li>
         <li>Couple + bride’s entire family</li>
@@ -395,17 +419,7 @@ footer p:last-child{max-width:24em;line-height:2.1}
         <li>Couple + Wisconsin International University College alumni</li>
         <li>Couple + friends of bride</li>
         <li>Couple + friends of groom</li>
-      </ol>
-    </div>
-  </div>
-</section>
-
-<!-- ================= QUOTE =================  photo: photos/quote.jpg -->
-<section class="photo-sec quote" data-photo-section aria-label="A note from the couple">
-  <img data-photo src="photos/quote.jpg" alt="Evans and Esther standing back to back, smiling over their shoulders" loading="lazy">
-  <div class="quote-card glass">
-    <p>Together is a beautiful place to be</p>
-    <p class="label">Evans &amp; Esther</p>
+    </ol>
   </div>
 </section>
 
