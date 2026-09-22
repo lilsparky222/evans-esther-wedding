@@ -189,18 +189,27 @@ button{font:inherit;color:inherit}
 .steps li{counter-increment:step;display:grid;grid-template-columns:2.2rem 1fr;align-items:baseline;column-gap:var(--s3);padding:16px 0;border-bottom:1px solid var(--line);font-size:1.375rem;line-height:1.3;break-inside:avoid}
 .steps li::before{content:counter(step,decimal-leading-zero);font-family:var(--sans);font-size:.6875rem;letter-spacing:.14em;color:var(--accent)}
 .steps small{grid-column:2;display:block;margin-top:3px;font-family:var(--sans);font-weight:300;font-size:.8125rem;letter-spacing:.04em;line-height:1.7;color:var(--soft)}
-.steps small.roll{font-size:.75rem;line-height:1.8;margin-top:6px;max-width:34em}
 .steps small a{color:inherit;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:4px;text-decoration-thickness:1px}
 .steps small a:hover{color:var(--accent);text-decoration-color:var(--accent)}
 .steps small span{display:block}
 @media (min-width:820px){.steps{columns:2;column-gap:var(--s6)}}
 #photography .steps li{font-size:1.1875rem;padding:12px 0}
 /* master of ceremonies */
-.mc{max-width:900px;margin:var(--s5) auto 0;display:grid;gap:var(--s2);justify-items:center;text-align:center;position:relative;padding-top:var(--s4)}
-.mc::before{content:"";width:1px;height:var(--s4);background:var(--accent);position:absolute;top:0;left:50%;opacity:.8}
-.mc-name{font-size:clamp(1.625rem,4.5vw,2.125rem);font-style:italic;font-weight:300;line-height:1.1;letter-spacing:-.01em;display:flex;align-items:center;gap:var(--s3);width:100%;justify-content:center}
-.mc-name::before,.mc-name::after{content:"";flex:1;max-width:100px;height:1px;background:var(--line)}
-@media (max-width:519px){.mc-name::before,.mc-name::after{display:none}}
+.mc{max-width:900px;margin:var(--s6) auto 0;display:grid;gap:10px;justify-items:center;text-align:center}
+.mc .orn{display:flex;align-items:center;gap:12px;color:var(--accent);margin-bottom:6px}
+.mc .orn::before,.mc .orn::after{content:"";width:56px;height:1px;background:var(--line)}
+.mc .orn i{width:7px;height:7px;background:currentColor;transform:rotate(45deg);display:block}
+.mc-name{font-size:clamp(1.75rem,4.8vw,2.375rem);font-style:italic;font-weight:300;line-height:1.1;letter-spacing:-.01em}
+.mc-name::first-letter{color:var(--accent)}
+
+/* champagne poppers */
+.poppers{max-width:900px;margin:var(--s6) auto 0;display:grid;gap:var(--s3);justify-items:center;text-align:center}
+.poppers h3{font-size:clamp(1.625rem,4.5vw,2.125rem);font-style:italic;font-weight:300;line-height:1.15}
+.poppers>p:not(.label){color:var(--soft);max-width:30em;font-size:1.125rem}
+.poppers ul{width:100%;display:grid;grid-template-columns:repeat(2,1fr);gap:6px var(--s3);padding:var(--s4) 0;margin-top:var(--s2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:1.1875rem;line-height:1.35}
+.poppers li{padding:4px 0}
+@media (min-width:640px){.poppers ul{grid-template-columns:repeat(4,1fr);gap:10px var(--s4);font-size:1.25rem}}
+.poppers .tick{margin-top:var(--s2)}
    
 /* ---------- Venue ---------- */
 .venue-grid{display:grid;gap:var(--s5);align-items:center;justify-items:center}
@@ -369,7 +378,7 @@ footer p:last-child{max-width:24em;line-height:2.1}
       <li>Introduction of new couple</li>
       <li>Solo ministration<small>Angela Hayford</small></li>
       <li>Cutting of cake<small>Mrs Adotevi</small></li>
-      <li>Popping of champagne<small class="roll">Abigail Naa Amerley Tagoe · Mavis Osei · Eld. Andrews Obuobi · Dr Opuni · Dr Dede · Dr Amoako · Emmanuel Ofori Pobi · Isaac Asiedu · Elikem Fiegbor · Michael Tsumasi · Brian Kuffuor · Eld. Daniel France · Priscilla Offei · Mrs Smith · Mrs Agatha Fyn · Isaac Ashietey</small></li>
+      <li>Popping of champagne<small><a href="#poppers">See the champagne poppers below</a></small></li>
       <li>Offertory<small>Brian Kuffuor</small></li>
       <li>2nd ministration<small>Charity Church Choir</small></li>
       <li>Closing prayer and benediction</li>
@@ -378,8 +387,33 @@ footer p:last-child{max-width:24em;line-height:2.1}
     </ol>
 
     <div class="mc">
+      <div class="orn" aria-hidden="true"><i></i></div>
       <p class="label">Master of ceremonies</p>
       <p class="mc-name">Philip Offei Asamoah</p>
+    </div>
+
+    <div class="poppers" id="poppers">
+      <p class="label">Popping of champagne</p>
+      <h3>With gratitude to our champagne poppers</h3>
+      <p>Who will raise the first toast to the new couple.</p>
+      <ul>
+        <li>Abigail Naa Amerley Tagoe</li>
+        <li>Mavis Osei</li>
+        <li>Eld. Andrews Obuobi</li>
+        <li>Dr Opuni</li>
+        <li>Dr Dede</li>
+        <li>Dr Amoako</li>
+        <li>Emmanuel Ofori Pobi</li>
+        <li>Isaac Asiedu</li>
+        <li>Elikem Fiegbor</li>
+        <li>Michael Tsumasi</li>
+        <li>Brian Kuffuor</li>
+        <li>Eld. Daniel France</li>
+        <li>Priscilla Offei</li>
+        <li>Mrs Smith</li>
+        <li>Mrs Agatha Fyn</li>
+        <li>Isaac Ashietey</li>
+      </ul>
     </div>
 
   </div>
