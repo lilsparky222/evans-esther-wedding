@@ -306,62 +306,6 @@ footer p:last-child{max-width:24em;line-height:2.1}
   </nav>
 </header>
 
-<!-- ================= GIFTS ================= -->
-<style>
-.gift-grid{display:grid;gap:var(--s3);max-width:760px;margin-inline:auto}
-@media (min-width:640px){.gift-grid{grid-template-columns:1fr 1fr;gap:var(--s4)}}
-.gift-card{display:grid;gap:10px;justify-items:center;text-align:center;padding:var(--s5) var(--s4);border:1px solid var(--line);border-radius:2px;background:var(--bg)}
-.gift-num{font-size:clamp(1.875rem,7vw,2.375rem);font-weight:300;line-height:1.1;letter-spacing:.02em;font-variant-numeric:lining-nums tabular-nums}
-.gift-name{font-style:italic;color:var(--soft)}
-.gift-card .btn{margin-top:var(--s3)}
-</style>
-
-<section class="sec alt" id="gifts">
-  <div class="wrap">
-    <div class="head">
-      <p class="label">Gifts</p>
-      <h2 class="title">With love and thanks</h2>
-      <p>Your presence is the greatest gift of all. Should you wish to bless us further, you may do so by mobile money.</p>
-    </div>
-
-    <div class="gift-grid">
-      <div class="gift-card">
-        <p class="label">MTN MoMo</p>
-        <p class="gift-num">024 214 9982</p>
-        <p class="gift-name">Esther Dzamesi</p>
-        <button class="btn" type="button" data-copy="0242149982">Copy number</button>
-      </div>
-      <div class="gift-card">
-        <p class="label">Telecel Cash</p>
-        <p class="gift-num">024 966 0226</p>
-        <p class="gift-name">Esther Dzamesi</p>
-        <button class="btn" type="button" data-copy="0249660226">Copy number</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<script>
-(function(){
-  Array.prototype.forEach.call(document.querySelectorAll('[data-copy]'), function(btn){
-    var label = btn.textContent;
-    btn.addEventListener('click', function(){
-      var num = btn.getAttribute('data-copy');
-      function done(){ btn.textContent = 'Copied'; setTimeout(function(){ btn.textContent = label; }, 2000); }
-      function fallback(){
-        var t = document.createElement('textarea');
-        t.value = num; t.style.position = 'fixed'; t.style.opacity = '0';
-        document.body.appendChild(t); t.select();
-        try { document.execCommand('copy'); done(); } catch (e) {}
-        document.body.removeChild(t);
-      }
-      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(num).then(done, fallback);
-      else fallback();
-    });
-  });
-})();
-</script>
-
 <main id="top">
 
 <!-- ================= WELCOME =================  photo: photos/hero.jpg -->
@@ -609,6 +553,63 @@ footer p:last-child{max-width:24em;line-height:2.1}
     </div>
   </div>
 </section>
+
+<!-- ================= GIFTS ================= -->
+<style>
+.gift-grid{display:grid;gap:var(--s3);max-width:760px;margin-inline:auto}
+@media (min-width:640px){.gift-grid{grid-template-columns:1fr 1fr;gap:var(--s4)}}
+.gift-card{display:grid;gap:10px;justify-items:center;text-align:center;padding:var(--s5) var(--s4);border:1px solid var(--line);border-radius:2px;background:var(--bg)}
+.gift-num{font-size:clamp(1.875rem,7vw,2.375rem);font-weight:300;line-height:1.1;letter-spacing:.02em;font-variant-numeric:lining-nums tabular-nums}
+.gift-name{font-style:italic;color:var(--soft)}
+.gift-card .btn{margin-top:var(--s3)}
+</style>
+
+<section class="sec alt" id="gifts">
+  <div class="wrap">
+    <div class="head">
+      <p class="label">Gifts</p>
+      <h2 class="title">With love and thanks</h2>
+      <p>Your presence is the greatest gift of all. Should you wish to bless us further, you may do so by mobile money.</p>
+    </div>
+
+    <div class="gift-grid">
+      <div class="gift-card">
+        <p class="label">MTN MoMo</p>
+        <p class="gift-num">024 214 9982</p>
+        <p class="gift-name">Esther Dzamesi</p>
+        <button class="btn" type="button" data-copy="0242149982">Copy number</button>
+      </div>
+      <div class="gift-card">
+        <p class="label">Telecel Cash</p>
+        <p class="gift-num">024 966 0226</p>
+        <p class="gift-name">Esther Dzamesi</p>
+        <button class="btn" type="button" data-copy="0249660226">Copy number</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  Array.prototype.forEach.call(document.querySelectorAll('[data-copy]'), function(btn){
+    var label = btn.textContent;
+    btn.addEventListener('click', function(){
+      var num = btn.getAttribute('data-copy');
+      function done(){ btn.textContent = 'Copied'; setTimeout(function(){ btn.textContent = label; }, 2000); }
+      function fallback(){
+        var t = document.createElement('textarea');
+        t.value = num; t.style.position = 'fixed'; t.style.opacity = '0';
+        document.body.appendChild(t); t.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(t);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(num).then(done, fallback);
+      else fallback();
+    });
+  });
+})();
+</script>
+   
 
 </main>
 
